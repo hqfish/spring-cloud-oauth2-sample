@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt/jwt-auth-server/jwt-auth-server.iml" filepath="$PROJECT_DIR$/oauth2-jwt/jwt-auth-server/jwt-auth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt-credentials/jwt-auth-server-credentials/jwt-auth-server-credentials.iml" filepath="$PROJECT_DIR$/oauth2-jwt-credentials/jwt-auth-server-credentials/jwt-auth-server-credentials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt-sign/jwt-auth-server-sign/jwt-auth-server-sign.iml" filepath="$PROJECT_DIR$/oauth2-jwt-sign/jwt-auth-server-sign/jwt-auth-server-sign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt/jwt-resource-server/jwt-resource-server.iml" filepath="$PROJECT_DIR$/oauth2-jwt/jwt-resource-server/jwt-resource-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt-credentials/jwt-resource-server-credentials/jwt-resource-server-credentials.iml" filepath="$PROJECT_DIR$/oauth2-jwt-credentials/jwt-resource-server-credentials/jwt-resource-server-credentials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt-sign/jwt-resource-server-sign/jwt-resource-server-sign.iml" filepath="$PROJECT_DIR$/oauth2-jwt-sign/jwt-resource-server-sign/jwt-resource-server-sign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt/oauth2-jwt.iml" filepath="$PROJECT_DIR$/oauth2-jwt/oauth2-jwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt-credentials/oauth2-jwt-credentials.iml" filepath="$PROJECT_DIR$/oauth2-jwt-credentials/oauth2-jwt-credentials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-jwt-sign/oauth2-jwt-sign.iml" filepath="$PROJECT_DIR$/oauth2-jwt-sign/oauth2-jwt-sign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-oauth2-sample.iml" filepath="$PROJECT_DIR$/spring-cloud-oauth2-sample.iml" />
+    </modules>
+  </component>
+</project>

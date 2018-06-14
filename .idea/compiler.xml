@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jwt-auth-server" />
+        <module name="jwt-auth-server-credentials" />
+        <module name="jwt-auth-server-sign" />
+        <module name="jwt-resource-server" />
+        <module name="jwt-resource-server-credentials" />
+        <module name="jwt-resource-server-sign" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jwt-auth-server" target="1.5" />
+      <module name="jwt-auth-server-credentials" target="1.5" />
+      <module name="jwt-auth-server-sign" target="1.5" />
+      <module name="jwt-resource-server" target="1.7" />
+      <module name="jwt-resource-server-credentials" target="1.5" />
+      <module name="jwt-resource-server-sign" target="1.5" />
+      <module name="oauth2-jwt" target="1.5" />
+      <module name="oauth2-jwt-credentials" target="1.5" />
+      <module name="oauth2-jwt-sign" target="1.5" />
+      <module name="spring-cloud-oauth2-sample" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
