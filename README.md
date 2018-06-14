@@ -1,4 +1,5 @@
-每个示例都分认证服务和资源服务，尽量和真实环境保持一致
+每个示例都分认证服务和资源服务，尽量和真实环境保持一致.
+**oauth2-jwt**这个工程更贴近于实际工程，可以此为基础扩展项目代码
 
 ### oauth2-jwt-sign工程说明
 jwt认证协义，使用签名，认证和资源服务器签名相同("123")
@@ -49,7 +50,7 @@ token证书通过/oauth/token_key到认证服务器获取，并使用redis存储
 注：资源服务器可以使用jwtTokenStore，就不会从redis中取token并验证了
 
 
-### Password认证
+### Password认证测试
 http://localhost:8081/oauth/token?grant_type=password&username=user_1&password=123456
 返回结果
 ```
