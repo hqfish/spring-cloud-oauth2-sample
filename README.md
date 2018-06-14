@@ -52,6 +52,12 @@ token使用jwt证书认证，并且使用redis作为token的存储
 ### jwt-resource-server 资源服务器
 token证书通过/oauth/token_key到认证服务器获取，并使用redis存储token
 
+**核心代码说明：**
+- ResourceConfiguration 资源服务器配置
+
+配置哪些资源需要安全认证，这里配置/bb/**的API需要安全认证后才可访问；JWT认证协议及tokenstore等信息，因为使用证书，还需要配置
+/oauth/token_key到认证服务器中获取证书key
+
 注：资源服务器可以使用jwtTokenStore，就不会从redis中取token并验证了
 
 
