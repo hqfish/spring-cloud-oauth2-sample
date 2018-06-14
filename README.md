@@ -23,19 +23,30 @@ token使用jwt证书认证，并且使用redis作为token的存储
 
 - jwt-resource-server 资源服务器
 token证书通过/oauth/token_key到认证服务器获取，jwtTokenStore，不会从redis中取token并验证了
-- jwt-auth-server 认证服务工程
-token使用jwt证书认证，并且使用redis作为token的存储
-
-- jwt-resource-server 资源服务器
-token证书通过/oauth/token_key到认证服务器获取，并使用redis存储token
-注：资源服务器可以使用jwtTokenStore，就不会从redis中取token并验证了
-
 
 
 ### oauth2-jwt工程说明
 更接近于实际项目
-- 使用JWT认证协义，使用证书
-- 使用redis存储 token
+#### jwt-auth-server 认证服务工程
+token使用jwt证书认证，并且使用redis作为token的存储
+
+**核心代码说明：**
+- OAuth2AuthorizationServerConfig 认证服务器核心配置 
+认证类型、认证协议、token如何存储都是在这里配配置
+
+- MyUserDetailsService 待验证的用户实体初始化
+通过用户(username)来初始化UserDetails，主要是初始化密码，以便provider和用户输入的密码做校验。
+这里给的是示例代码，直接反回了一个用户。真实环境是根据用户名到数据库中加载正确的密码用于初始化UserDetails。
+
+- SecurityDaoAuthenticationProvider 校验类
+在该类里可以拿到用户输入的用户名/密码(UsernamePasswordAuthenticationToken)和数据库中的用户名/密码(UserDetails),在这里做校验，如果不正确可以抛异常。
+特殊的策略也可以在这里实现，如密码策略、最大用户数策略等
+
+
+
+#### jwt-resource-server 资源服务器
+token证书通过/oauth/token_key到认证服务器获取，并使用redis存储token
+注：资源服务器可以使用jwtTokenStore，就不会从redis中取token并验证了
 
 
 ### Password认证

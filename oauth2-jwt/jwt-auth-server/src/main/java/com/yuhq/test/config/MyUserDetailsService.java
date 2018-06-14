@@ -18,10 +18,6 @@ import java.util.List;
 @Component("userDetailsService")
 public class MyUserDetailsService implements UserDetailsService {
 
-    public MyUserDetailsService(){
-        System.out.println("****00000**********");
-    }
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println(username);

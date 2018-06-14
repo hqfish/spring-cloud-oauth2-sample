@@ -2,6 +2,14 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt-credentials" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt-credentials/jwt-auth-server-credentials" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt-credentials/jwt-resource-server-credentials" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt-sign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt-sign/jwt-auth-server-sign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt-sign/jwt-resource-server-sign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oauth2-jwt/jwt-auth-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/oauth2-jwt/jwt-resource-server" charset="UTF-8" />
   </component>
 </project>
