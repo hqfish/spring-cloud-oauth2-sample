@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.PostConstruct;
 
@@ -28,15 +30,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void init() throws Exception {
         authenticationManagerBuilder
                 .authenticationProvider(securityDaoAuthenticationProvider());
-//            .userDetailsService(userDetailsService)
-//            .passwordEncoder(passwordEncoder());
     }
 
+    // 配置密码加密策略
 //    @Bean
-//    public UserDetailsService userDetailsService(){
-//        return new MyUserDetailsService();
+//    public PasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
 //    }
-
 
 
     @Bean
@@ -44,22 +44,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         SecurityDaoAuthenticationProvider authProvider = new SecurityDaoAuthenticationProvider();
 //        authProvider.setPasswordEncoder(passwordEncoder());
         authProvider.setUserDetailsService(userDetailsService);
-        System.out.println(userDetailsService instanceof  MyUserDetailsService);
         return authProvider;
     }
 
-    /**
-     * 实际不可能使用， 不能配置，
-     * @return
-     * @throws Exception
-     */
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("user_1").password("123456").authorities("ROLE_USER","ROLE_ADMIN")
-//                .and()
-//                .withUser("user_2").password("1234567").authorities("ROLE_USER","ROLE_ADMIN");
-//    }
 
     @Bean
     @Override
