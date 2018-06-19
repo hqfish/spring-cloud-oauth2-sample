@@ -37,6 +37,10 @@ token使用jwt证书认证，并且使用redis作为token的存储
 
     认证类型、认证协议、token如何存储都是在这里配配置
 
+- SecurityConfiguration 安全配置
+
+    MyUserDetailsService和SecurityDaoAuthenticationProvider
+
 - MyUserDetailsService 待验证的用户实体初始化
 
     通过用户(username)来初始化UserDetails，主要是初始化密码，以便provider和用户输入的密码做校验。
@@ -79,3 +83,37 @@ http://localhost:8081/oauth/token?grant_type=password&username=user_1&password=1
 - http://localhost:8082/aa/1 没有添加认证
 - http://localhost:8082/bb/1?access_token=eyJhbGci...添加access_token信息
 或者 http://localhost:8082/bb/1 添加request header信息:Authorization: Bearer eyJhbGc...
+
+## client_credentials认证
+http://localhost:8081/oauth/token?grant_type=client_credentials&client_id=client&client_secret=secret&scope=app
+返回结果
+```
+{
+    "access_token": "eyJhbGciOiJS...",
+    "token_type": "bearer",
+    "expires_in": 42057,
+    "scope": "app",
+    "jti": "2e356c45-0696-456c-9b31-f8fa61f5f1be"
+}
+```
+注意：如果弹出录陆对话框或者如下错误信息：说明认证服务器没有配置客户端的表单校验
+```
+{
+    "timestamp": "2018-06-19T06:32:54.509+0000",
+    "status": 401,
+    "error": "Unauthorized",
+    "message": "Full authentication is required to access this resource",
+    "path": "/oauth/token"
+}
+```
+打开认证服务器表单校验
+```
+@Override
+public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+    oauthServer
+            .tokenKeyAccess("permitAll()")
+            .checkTokenAccess("isAuthenticated()") //allow check token
+            //允许表单校验client_credentials授权类型，如果不配置会报错
+            .allowFormAuthenticationForClients();
+}
+```
